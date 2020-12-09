@@ -1,9 +1,16 @@
+<!DOCTYPE html>
+<html>
 <head>
-    <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+  <meta charset="utf-8">
+  <title>Other Selfies: Other Selves</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+
     <script src="https://cdn.rawgit.com/elbobo/aframe-multisrc-component/b6d23310/dist/0.3/aframe-multisrc-component.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
+    <script src="script.js"></script>
   </head>
   <body>
-    <a-scene>
+      <a-scene background = "color: navy" >
 
       <a-assets>
         <img id="right" src="path/to/rightimage.png">
@@ -60,7 +67,7 @@
        multisrc="src2:#top;src4:#front"
        color="yellow"
        opacity="0.5"
-       shadow>
+       shadow = "green">
       </a-box>
 
         <a-box 
