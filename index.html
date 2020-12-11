@@ -84,9 +84,9 @@
 
       <a-camera id = "camera" zoom = ".70" event-set__wheel = "_event:wheel;zoom:wheelDelta">
         <a-cursor geometry = "primitive:ring; radiusInner:1; radiusOuter:1"
-        color = "blue"
+        mouseCursorStylesEnabled = true
         ></a-cursor>
-        </a-camera>
+      </a-camera>
         
       
    
@@ -102,31 +102,35 @@
       
        <a-box 
        position="-1 .3 -5" 
-       multisrc= "src0: #bwa1Texture; src1: #bwa2Texture; src2: #bwa3Texture; src3 :#bwa4aTexture; src4: #bwa1Texture; src5: #bwa2Texture;"
-       color= "yellow"
+       multisrc= "src0: #bwa1Texture; src1: #bwa2Texture; src2: #bwa3Texture; src3: #bwa4aTexture; src4: #bwa1Texture; src5: #bwa2Texture; src6: #bt8Texture;"
+       color= 
        opacity="0.5"
        animation= "property: object3D.rotation.y; to:360; loop:true; dur:20000"
-       shadow = "green">
+       shadow = "navy">
        </a-box> 
 
-         <a-box 
-          position="1.5 .3 -6" 
-          multisrc= "src0: #bwa1Texture; src1: #bwa2Texture; src2: #bwa3Texture; src3 :#bwa4aTexture; src4: #bwa1Texture; src5: #bwa2Texture;"
-          color="purple"
-          animation= "property: object3D.rotation.y; to:360; loop:true; dur:20000"
-          opacity="0.5"
-          shadow> ".3"
-         </a-box>
-
-        <a-box position="-1.5 3.5 -2" rotation="30 30 0" color="red"
-        event-set__enter="_event: mouseenter; material.color: yellowgreen; scale: 3 1 1"
-        event-set__leave="_event: mouseleave; material.color: orange; scale: 1 1 1"
-        animation= "property: object3D.rotation.y; to:360; loop:true; dur:20000">
-          <a-animation attribute="rotation" begin="click" dur="500" fill="backwards" to="30 30 360"></a-animation>
+        <a-box 
+        position="1.5 .3 -6" 
+        multisrc= "src0: #bwa1Texture; src1: #bwa2Texture; src2: #bwa3Texture; src3 :#bwa4aTexture; src4: #bwa1Texture; src5: #bwa2Texture;"
+        color= "pink"
+        animation = "property: object3D.rotation.y; to:360; loop:true; dur:20000"
+        opacity="0.2"
+        shadow> ".3"
         </a-box>
 
-       <!-- //Camera "look" controls mouse function option:
- <a-entity position="0 1.8 4">
+       <a-box 
+       position="-1.5 3.5 -2"
+       multisrc= "src0: #rf1Texture; src1: #rf2Texture; src2: #rf3Texture; src3: #rf4Texture; src4: #rf5Texture; src5: #rf6Texture; src6: #bt9Texture;"
+       rotation="30 30 0"
+       color="red"
+       event-set__enter="_event: mouseenter; material.color: yellowgreen; scale: 3 1 1"
+       event-set__leave="_event: mouseleave; material.color: orange; scale: 1 1 1"
+       animation= "property: object3D.rotation.y; to:360; loop:true; dur:20000">
+      <a-animation attribute="rotation" begin="click" dur="500" fill="backwards" to="30 30 360"></a-animation>
+        </a-box>
+<!-- 
+       //Camera "look" controls mouse function option: -->
+ <!-- <a-entity position="0 1.8 4">
   <a-entity camera look-controls mouse-cursor>
     <a-cursor fuse="true" color="turquoise"></a-cursor>
   </a-entity>
@@ -135,30 +139,29 @@
 
         <a-box 
         position="-2 0.5 -3" 
-        rotation="0 45 0"
-        multisrc="src0: #bt1Texture; src1: #bt2Texture; src2: #bt3Texture; src3 :#bt4Texture; src4: #bt5Texture; src5: #bt6Texture src6: #bt7Texure;"
+        rotation="0 45 -45"
+        multisrc="src0: #bt1Texture; src1: #bt2Texture; src2: #bt3Texture; src3 :#bt4Texture; src4: #bt5Texture; src5: #bt6Texture src6: #bt7Texture;"
         color= "green"
         metalness = ".5"
         opacity = ".7"
-        animation= "property: object3D.rotation.y; to:360; loop:true; dur:20000"
-        event-set__enter="_event: mouseenter; color: #EFEFEG;"
-        event-set__leave="_event: mouseleave; color: #EFEFEF">
+        animation__position="property: object3D.rotation.y; to:360; loop:true; dur:20000">
         </a-box>
+        event-set__enter="_event: mouseenter; color: #EFEFEG;"
+        event-set__leave="_event: mouseleave; color: #EFEFEF"
 
 
         <a-box
-        multisrc= "src0: #rf1Texture; src1: #rf2Texture; src2: #rf3Texture; src3 :#rf4Texture; src4: #rf5Texture; src5: #rf6Texture;"
+        multisrc= "src0: #rf1Texture; src1: #rf2Texture; src2: #rf3Texture; src3: #rf4Texture; src4: #rf5Texture; src5: #rf6Texture; src6: #bt9Texture;"
         position="0 1 -10"
         rotation="0 45 -45"
         metalness = ".7"
         sound ="src:#chantMixAud;autoplay:true; loop: true;"
         scale="4 4 4"
         opacity = 3
-   
-        animation__position="property: object3D.rotation.y; to:360; loop:true; dur:20000"
-        animation__mouseenter="property: scale; to: 2.3 2.3 2.3; dur: 300; startEvents: mouseenter"
-        animation__mouseleave="property: scale; to: 2 2 2; dur: 300; startEvents: mouseleave">
+        animation__position="property: object3D.rotation.y; to:360; loop:true; dur:20000">
       </a-box>
+      <!-- animation__mouseenter="property: scale; to: 2.3 2.3 2.3; dur: 300; startEvents: mouseenter"
+      animation__mouseleave="property: scale; to: 2 2 2; dur: 300; startEvents: mouseleave" -->
 
     <!-- etc. and you can assign images inline and with srcspath using this method as well -->
     
