@@ -5,13 +5,12 @@
   <title>Other Selfies: Other Selves</title>
   <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
   <script src="https://cdn.rawgit.com/elbobo/aframe-multisrc-component/b6d23310/dist/0.3/aframe-multisrc-component.js"></script>
-    <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
-    <script src="script.js"></script>
+  <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
+  <script src="script.js"></script>
   </head>
   <body>
+
       <a-scene background = "color:	#556B2F" >
-
-
         <script>
           AFRAME.registerComponent('scale-on-mouseenter', {
             schema: {
@@ -27,8 +26,9 @@
               });
             }
           });
-
-          AFRAME.registerComponent('audioclickchantmix', {
+        </script>
+        
+        <!-- <script> AFRAME.registerComponent('audioclickchantmix', {
             
             init: function () {
               let isPlaying = false; 
@@ -46,7 +46,7 @@
             }
 
           });
-        </script>
+        </script> -->
 
       <a-assets>
         <!-- <a-video id= clVidTexture src = "assets/conLABexp.mp4" autoplay="true" preload></a-video>  -->
@@ -80,12 +80,13 @@
         <img id ="bt7Texture" src="assets/bt7.jpg"></img> 
         <img id ="bt8Texture" src="assets/bt8.jpg"></img> 
         <img id ="bt9Texture" src="assets/bt9.jpg"></img>
-        <video id = "talkageVid" src="assets/talkage.mp4" autoplay = true loop = true preload 
+
+        <video id = "oriVid" src="assets/oriVid.mp4" autoplay = true loop = true preload 
          ></video>
          <video id = "dotsVid"  src ="assets/dots.mp4"  autoplay = true loop = true preload 
          ></video>
-         <video id = "eyerollVid"  src ="assets/fwdeyeroll.mp4"  autoplay = true loop = true preload 
-         ></video>
+         <!-- <video id = "cricketsVid"  src ="assets/crickets.mp4"  preload = true autoplay = false loop = true preload 
+         ></video> -->
          <video id = "greytalkVid"  src ="assets/greytalk.mp4"  autoplay = true loop = true preload 
          ></video>
          <video id = "dotsVid"  src ="assets/dots.mp4"  autoplay = true loop = true preload 
@@ -97,6 +98,8 @@
          <video id = "eyeroll1Vid"  src ="assets/eyerollage.mp4"  autoplay = true loop = true preload 
          ></video>
          <video id = "neonVid"  src ="assets/neon.mp4"  autoplay = true loop = true preload 
+         ></video>
+         <video id = "meltdownVid"  src ="assets/meltdown.mp4"  autoplay = true loop = true preload 
          ></video>
          <video id = "youngtalkVid"  src ="assets/youngtalk.mp4"  autoplay = true loop = true preload 
          ></video>
@@ -125,10 +128,12 @@
 
       <a-light type = "ambient" color = "	#F0E68C"></a-light> 
       <a-camera id = "camera" zoom = ".70" event-set__wheel = "_event:wheel;zoom:wheelDelta">
-        <a-cursor geometry = "primitive:ring; radiusInner:.5; radiusOuter:1"
+
+        <a-cursor mouseCursorStylesEnabled  
+        geometry = "primitive:ring;"
         ></a-cursor>
       </a-camera>
-      <!-- mouseCursorStylesEnabled = true -->
+      
       <!-- <a-video src = "assets/talkage.mp4" autoplay="true" loop=true position="0 0 -4" rotation="0 0 0" width="4" height="4"></a-video>  -->
 
 
@@ -140,26 +145,24 @@
       
        
       <a-box 
-       position="0 0 0" 
+       position="1 .3 -.5" 
        rotation="-90 -45 -45"
-       audioclickchantmix
-       multisrc="src0: #redVid; src1: #redVid; src2: #redVid; src3 :#redVid; src4: #redVid; src5: #redVid"
-       color="gold"
-       opacity=".5"
-       metalness =.5
-       animation= "property: object3D.rotation.y; to:180; loop:true; dur:10000"
-       shadow = "blue">
+       audioclickoriAud
+       multisrc="src0: #oriVid; src1: #oriVid; src2: #oriVid; src3 :#oriVid; src4: #oriVid; src5: #oriVid"
+       opacity=".9"
+       metalness =.1
+       animation= "property: object3D.rotation.y; to:180; loop:true; dur:20000"
+       shadow = >
       </a-box>
      
        -->
-       <!-- <a-box 
+ <a-box 
        position="-1 .3 -5" 
-       multisrc= "src0: #bwa1Texture; src1: #bwa2Texture; src2: #bwa3Texture; src3: #bwa4aTexture; src4: #bwa1Texture; src5: #bwa2Texture; src6: #bt8Texture;"
-       color= "brown"
-       opacity="0.5"
+       multisrc= "src0: #redVid; src1: #talk2Vid; src2: #meltdownVid; src3: #meltdownVid; src4: #meltdownVid; src5: #meltdownVid; src6: #meltdownVid;"
+       opacity="0.9"
        animation= "property: object3D.rotation.y; to:360; loop:true; dur:20000"
        shadow = "navy">
-       </a-box>  -->
+       </a-box>  
 
         <!-- <a-box 
         position="3.5 .7 10" 
@@ -198,8 +201,8 @@
         opacity = ".7"
         animation__position="property: object3D.rotation.y; to:360; loop:true; dur:20000">
         </a-box> -->
-        event-set__enter="_event: mouseenter; color: #EFEFEG;"
-        event-set__leave="_event: mouseleave; color: #EFEFEF"
+        <!-- event-set__enter="_event: mouseenter; color: #EFEFEG;"
+        event-set__leave="_event: mouseleave; color: #EFEFEF" -->
 
 <!-- 
         <a-box

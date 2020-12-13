@@ -4,7 +4,7 @@ console.log("me");
 
 
 // var foo = document.getElementById('foo').components.multisrc
-// foo.granularChange(0).color = {r:0,g:1,b:0}
+//  foo.granularChange(0).color = {r:0,g:1,b:0}
 
 window.addEventListener("wheel", event=>{
     let myCamera = document.getElementById("camera");
