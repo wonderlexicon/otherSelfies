@@ -26,3 +26,7 @@ let port = process.env.PORT ||5000;
 server.listen(port,() =>{
     console.log("server listening");
 });
+
+global.window = require('jsdom').jsdom().defaultView;
+var aframe = require('aframe/src');
+console.log(aframe.version);
