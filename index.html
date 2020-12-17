@@ -2,89 +2,41 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>IntheZoomRoom</title>
+  <title>otherSelfies</title>
   <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
   <script src="https://cdn.rawgit.com/elbobo/aframe-multisrc-component/b6d23310/dist/0.3/aframe-multisrc-component.js"></script>
   <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
   <script src="script.js"></script>
   </head>
   
-  <a-cursor id="cursor">
-    <a-animation begin="click" easing="ease-in" attribute="scale"
-                 fill="backwards" from="0.1 0.1 0.1" to="1 1 1" dur="150"></a-animation>
-    <a-animation begin="cursor-fusing" easing="ease-in" attribute="scale"
-                 from="1 1 1" to="0.1 0.1 0.1" dur="1500"></a-animation>
-  </a-cursor> 
+  <a-scene background = "color:	#556B2F" >
 
-  <script>
-    AFRAME.registerComponent('scale-on-mouseenter', {
-      schema: {
-        to: {default: '2.5 2.5 2.5', type: 'vec3'}
-      },
-  
-      init: function () {
-        var data = this.data;
-        var el = this.el;
-        this.el.addEventListener('mouseenter', function () {
-          el.object3D.scale.copy(data.to);
-        });
-      }
-    });
-  </script>
-     
-      <a-scene background = "color:	#556B2F" >
 
-    
-               <!-- POSITIONAL AUDIO? -->
+        <!-- something  odd with assets if I have only one tag I lose my groundTexture.  -->
 
-  
-<!-- <a-entity id="indoorvoice" 
-geometry "primitive:plane"
-material="visible:true" position ="0 0 -5"
-sound ="src:assets/chantmix2.wav;autoplay:false; loop: true;"></a-entity>  -->
-       
-
-        
-
-      <a-assets>
+      <!-- <a-assets>
         <audio src="assets/audio/chantmix2.wav" 
-        preload></audio>
+        preload></audio> -->
+        
         <a-assets>
-          <audio src="assets/audio/chantmix2.wav" autoplay
-          loop = false preload></audio>
+        <audio src="assets/audio/chantmix2.wav" autoplay=true loop = true preload = true ></audio>
+        <audio src="assets/audio/daydream.mp3" autoplay=false loop = true preload = true ></audio>
+        <audio src="assets/audio/chantmix2.wav" autoplay=true loop = true preload = true ></audio>
+        <audio src="assets/audio/daydream.mp3" autoplay=false loop = true preload = true ></audio>
         </a-assets>
-        <!-- <img id="right" src="path/to/rightimage.png">
-        <img id="left" src="path/to/leftimage.png">
-        <img id="top" src="path/to/topimage.png">
-        <img id="bottom" src="path/to/bottomimage.png">
-        <img id="front" src="path/to/frontimage.png">
-        <img id="back" src="path/to/backimage.png"> -->
-        <img id ="bwa1Texture" src="assets/img/BWartist1.jpg"></img> 
-        <img id ="bwa2Texture" src="assets/img/BWartist2.jpg"></img>
-        <img id ="bwa3Texture" src="assets/img/BWartist2.jpg"></img>
-        <img id ="bwa4aTexture" src="assets/img/BWartist4a.jpg"></img> 
-        <img id ="bwa4bTexture" src="assets/img/BWartist4b.jpg"></img>
-        <img id ="rf1Texture" src="assets/img/rf1.jpg"></img> 
-        <img id ="rf2Texture" src="assets/img/rf2.jpg"></img>
-        <img id ="rf3Texture" src="assets/img/rf3.jpg"></img>
-        <img id ="rf4Texture" src="assets/img/rf4.jpg"></img> 
-        <img id ="rf5Texture" src="assets/img/rf5.jpg"></img> 
-        <img id ="rf6Texture" src="assets/img/rf6.jpg"></img>
-        <img id ="bt1Texture" src="assets/img/bt1.jpg"></img> 
-        <img id ="bt2Texture" src="assets/img/bt2.jpg"></img>
-        <img id ="bt3Texture" src="assets/img/bt3.jpg"></img>
-        <img id ="bt3ATexture" src="assets/img/bt3A.jpg"></img>
-        <img id ="bt10Texture" src="assets/img/bt10.jpg"></img> 
-        <img id ="bt5Texture" src="assets/img/bt5.jpg"></img> 
-        <img id ="bt6Texture" src="assets/img/bt6.jpg"></img>
-        <img id ="bt7Texture" src="assets/img/bt7.jpg"></img> 
-        <img id ="bt8Texture" src="assets/img/bt8.jpg"></img> 
-        <img id ="bt9Texture" src="assets/img/bt9.jpg"></img>
+        <assets>
+        <img id ="groundTexture" src="assets/img/loresori.jpg"></img>
+        <img id ="hvysiTexture" src="assets/img/hvysilence.jpg"></img> 
+        <img id ="boredomTexture" src="assets/img/boredom.jpg"></img>
+        <img id ="wargamesTexture" src="assets/img/wargames.jpg"></img>
+        <img id ="reputationTexture" src="assets/img/reputation.jpg"></img> 
+        <img id ="inloveTexture" src="assets/img/inlove.jpg"></img>
+        <img id ="defensiveTexture" src="assets/img/defensive.jpg"></img> 
         <video id = "bdayVid" src="assets/video/bday.mp4" autoplay = false preload = true loop = true  
          ></video>
          <video id = "dotsVid"  src ="assets/video/dots.mp4"  autoplay = true loop = true preload 
          ></video>
-      <video id = "thefeelsVid"  src ="assets/video/thefeels.mp4"  preload = true autoplay = false loop = true preload 
+         <video id = "thefeelsVid"  src ="assets/video/thefeels.mp4"  preload = true autoplay = false loop = true preload 
          ></video>
          <video id = "therapyVid"  src ="assets/video/therapy.mp4"  preload = true autoplay = false loop = true  
          ></video>
@@ -98,7 +50,7 @@ sound ="src:assets/chantmix2.wav;autoplay:false; loop: true;"></a-entity>  -->
          ></video>
          <video id = "turkeydayVid"  src ="assets/video/turkeyday.mp4"  preload = true autoplay = false loop = true  
          ></video>
-          <video id = "sighVid"  src ="assets/video/sigh.mp4"  preload = true autoplay = false loop = true  
+        <video id = "sighVid"  src ="assets/video/sigh.mp4"  preload = true autoplay = false loop = true  
          ></video> 
          <video id = "weirdnessVid"  src ="assets/video/weirdness.mp4"  autoplay = true loop = true preload 
          ></video>
@@ -107,80 +59,85 @@ sound ="src:assets/chantmix2.wav;autoplay:false; loop: true;"></a-entity>  -->
          <video id = "overitVid"  src ="assets/video/overit.mp4"  autoplay = true loop = true preload 
          ></video>
          <video id = "coffeeVid"  src ="assets/video/coffee.mp4"  autoplay = true loop = true preload 
-         ></video>
-
-         <a-plane rotation="-90 0 0" width="30" height="30"></a-plane>
-         <img id="groundTexture" src="assets/img/loresori.jpg">
-         <a-plane src="#groundTexture" rotation="-90 0 0" width="30" height="30"
-  repeat="10 10"></a-plane>
-        
-      </a-assets>
-
+         ></video>      
+        <a/assets>
+         <!-- <a-plane src="#groundTexture"  rotation="-90 0 0" width="300" height="100"></a-plane>
+          -->
+          <!-- <video id="weirdnessVid" preload="" loop="true" webkit-playsinline playsinline src="vid/weirdness.mp4"></video>
+          <video id="coachvidVid" preload="" loop="true" webkit-playsinline playsinline src="vid/coachvid.mp4"></video>
+          <video id="overitVid" preload="" loop="true" webkit-playsinline playsinline src="vid/overit.mp4"></video>
+          <video id="coffeeVid" preload="" loop="true" webkit-playsinline playsinline src="vid/coffee.mp4"></video>
+          <video id="teethaVid" preload="" loop="true" webkit-playsinline playsinline src="vid/teetha.mp4"></video>
+          <video id="thefeelsVid" preload="" loop="true" webkit-playsinline playsinline src="vid/thefeels.mp4"></video> -->
+   
+      <a-plane src="#groundTexture" rotation="-90 0 0" width="300" height="30" opacity="1" metalness=".1"
+      repeat="20 20"></a-plane>
       
       
-      <!-- METHOD 1 -->
       
-      <!-- If you know you want to assign assets to ALL sides, using the `srcs` attribute is probably easiest -->
-      <!-- you can assign the images as ids from assets -->
-      <!-- OR add the images/videos inline -->
 
+  
+      <!-- <a-entity id="indoorvoice" 
+      geometry "primitive:plane"
+      material="visible:false" position ="0 0 -5"
+      sound ="src:assets/daydream.mp3; autoplay:false; loop: true;"></a-entity>  -->
+             
 
-
-
-      <!-- <a-entity
+<!--          
+     <a-entity
       id="backglow"
       obj-model="obj: #backGlowObj"
       materials="name: backglow"
-      render-order="stage"></a-entity>  -->
+      render-order="stage"></a-entity>   -->
 
 
-      <a-light type = "ambient" color = "	#F0E68C"></a-light> 
-     
+      <!-- <a-light type = "ambient" color = "	#F0E68C"></a-light> 
+      -->
       <!-- <a-video src = "assets/talkage.mp4" autoplay="true" loop=true position="0 0 -4" rotation="0 0 0" width="4" height="4"></a-video>  -->
 
 
    <!-- <a-plane src = "#thefeelsVid"  position="5 .3 -10" rotation="0 -45 0" width="10" height="4" color="#7BC8A4"
       event-set__down="_event: mousedown; material.wireframe: true"
       event-set__up="_event: mouseup; material.wireframe: false"
-      event-set__leave="_event: moulseleave; material.wireframe: false"></a-plane>  -->
-        
-    
-     <a-box 
-       multisrc="src0: #redVid; src1: #teethaVid; src2: #bdayVid; src3: #coffeeVid; src4: #therapyVid; src5: #weirdnessVid;"
+      event-set__leave="_event: moulseleave; material.wireframe: false"></a-plane> 
+         -->
+     
+       <!-- <a-box 
+       position="0 2 -5" 
+       rotation="0 45 45"
+       multisrc="src0: #overitVid; src1: #teethaVid; src2: #thefeelsVid; src3: #coffeeVid; src4: #bdayVid; src5: #weirdnessVid;"
        opacity=".9"
-       position="0 2 -5" rotation="0 45 45" scale="2 2 2"
+       scale="2 2 2"
        animation__position="property: object3D.position.y; to: 2.2; dir: alternate; dur: 2000; loop: true"
        animation__mouseenter="property: scale; to: 2.3 2.3 2.3; dur: 300; startEvents: mouseenter"
        animation__mouseleave="property: scale; to: 2 2 2; dur: 300; startEvents: mouseleave">
-     </a-box>
-    
-     <a-sound src="chantmix2.wav" autoplay="true"
+     </a-box>   -->
+   
+     <!-- <a-sound src="chantmix2.wav" autoplay="true"
      position="-3 1 -4"></a-sound>
-     <a-entity cursor raycaster="far: 20; interval: 1000; objects: .clickable"></a-entity>
+      -->
+     <!-- <a-entity cursor raycaster="far: 20; interval: 1000; objects: .clickable"></a-entity> -->
 
-     <a-entity
+     <!-- <a-entity
   animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1"
   animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 1500; from: 1 1 1; to: 0.1 0.1 0.1"
   animation__mouseleave="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 500; to: 1 1 1"
   cursor="fuse: true;"
   material="color: black; shader: flat"
   position="0 0 -3"
-  geometry="primitive: ring"></a-entity>
+  geometry="primitive: ring"></a-entity> -->
 
-     <a-entity
-      <a-box 
-        position="3.5 .7 10" 
-        multisrc= "src0: #bwa3Texture src1: #bt7Texture; src2: #selfie1.mp4; src3 :#bwa4aTexture; src4: #bwa1Texture; src5: #bwa2Texture;"
-        color= "white"
-        animation = "property: object3D.rotation.y; to:360; loop:true; dur:20000"
-        opacity="0.2"
-        shadow ".3"
-        text="value: zoomzoomzoom; color: #BBB"
-        position="-0.9 0.2 -3"
-        scale="1.5 1.5 1.5"></abox>
-      </a-entity>
 
-      <a-entity>
+      <!-- <a-box
+      position="45, 45, 0"
+      multisrc="src0: #hvysiTexture; src1: #boredomTexture; src2: #wargamesTexture; src3: #reputationTexture; src4: #inloveTexture; src5: #defensiveTexture;"
+      rotation="0 45 45"
+      animation= "property: object3D.rotation.y; to:360; loop:true; dur:20000">
+      <a/box> -->
+
+    <!-- <a-animation attribute="rotation" begin="click" dur="500" fill="backwards" to="30 30 360"></a-animation> -->
+
+      <!-- <a-entity>
         <a-animation attribute="scale" begin="2000" to="2 2 2"></a-animation>
       </a-entity>
 
@@ -190,20 +147,19 @@ sound ="src:assets/chantmix2.wav;autoplay:false; loop: true;"></a-entity>  -->
         
       <a-entity geometry="primitive: sphere; radiusTop: 1">
         <a-animation attribute="geometry.radiusTop" to="0.5"></a-animation>
-      </a-entity>
+      </a-entity> -->
 
-
-      <a-scene>
-        <a-assets>
+      
+        <!-- <a-assets>
           <a-mixin id="red" material="color: red"></a-mixin>
           <a-mixin id="blue" material="color: blue"></a-mixin>
           <a-mixin id="cube" geometry="primitive: box"></a-mixin>
         </a-assets>
-      
-        <a-entity mixin="red blue cube" material="color: green"></a-entity>
-      </a-scene>
-
-       <!-- <a-box 
+       -->
+        <!-- <a-entity mixin="red blue cube" material="color: green"></a-entity> -->
+ 
+<!-- 
+       <a-box 
        position="-1.5 3.5 -2"
        multisrc= "src0: #rf1Texture; src1: #rf2Texture; src2: #rf3Texture; src3: #rf4Texture; src4: #rf5Texture; src5: #rf6Texture; src6: #bt9Texture;"
        rotation="30 30 0"
@@ -215,26 +171,25 @@ sound ="src:assets/chantmix2.wav;autoplay:false; loop: true;"></a-entity>  -->
         </a-box> -->
 <!-- 
        //Camera "look" controls mouse function option: -->
-  <a-entity position="0 1.8 4">
-  <a-entity camera look-controls mouse-cursor>
+  <!-- <a-entity position="0 1.8 4">
+   <a-entity camera look-controls mouse-cursor>
     <a-cursor fuse="true" color="turquoise"></a-cursor>
   </a-entity>
-</a-entity> 
+</a-entity> -->
 
-<!-- 
-        <a-box 
+
+      <!-- <a-box 
         position="-2 0.5 -3" 
         rotation="0 45 -45"
-        multisrc="src0: #bt1Texture; src1: #bt2Texture; src2: #bt3Texture; src3 :#bt10Texture; src4: #bt5Texture; src5: #bt6Texture src6: #bt7Texture;"
-        color= "green"
+        color= "blue"
         metalness = ".5"
         opacity = ".7"
         animation__position="property: object3D.rotation.y; to:360; loop:true; dur:20000">
-        </a-box> -->
+        </a-box>  -->
+
         <!-- event-set__enter="_event: mouseenter; color: #EFEFEG;"
         event-set__leave="_event: mouseleave; color: #EFEFEF" -->
 
-<!-- 
         <a-box
         multisrc= "src0: #rf1Texture; src1: #rf2Texture; src2: #rf3Texture; src3: #rf4Texture; src4: #rf5Texture; src5: #rf6Texture; src6: #bt9Texture;"
         position="0 1 -10"
@@ -243,7 +198,7 @@ sound ="src:assets/chantmix2.wav;autoplay:false; loop: true;"></a-entity>  -->
         scale="4 4 4"
         opacity = 3
         animation__position="property: object3D.rotation.y; to:360; loop:true; dur:20000">
-      </a-box> -->
+      </a-box> 
 
       <!-- sound ="src:#chantMixAud;autoplay:true; loop: true;" -->
      
@@ -252,14 +207,35 @@ sound ="src:assets/chantmix2.wav;autoplay:false; loop: true;"></a-entity>  -->
 
    
     <!-- <a-video src = "assets/dots.mp4" autoplay="true" loop=true position="0 0 -4" rotation="0 0 0" width="4" height="4"></a-video>  -->
-    <a-camera id = "camera" zoom = ".10" event-set__wheel = "_event:wheel;zoom:wheelDelta">
 
-      <a-cursor 
-      ></a-cursor>
-    </a-camera>
-      
+
+<script>
+      AFRAME.registerComponent('scale-on-mouseenter', {
+        schema: {
+          to: {type: 'vec3'}
+        },
+        init: function () {
+          var data = this.data;
+          var el = this.el;
+          this.el.addEventListener('mouseenter', function () {
+            el.object3D.scale.copy(data.to);
+          });
+        }
+      });
+    </script>
+
+ <a-camera id = "camera" zoom = ".10" event-set__wheel = "_event:wheel;zoom:wheelDelta">
+    </a-camera> 
+ <!-- <a-cursor id="cursor">
+    <a-animation begin="click" easing="ease-in" attribute="scale"
+                 fill="backwards" from="0.1 0.1 0.1" to="1 1 1" dur="150"></a-animation>
+    <a-animation begin="cursor-fusing" easing="ease-in" attribute="scale"
+                 from="1 1 1" to="0.1 0.1 0.1" dur="1500"></a-animation>
+  </a-cursor>  -->
+
+  
+    <a-cursor 
+    ></a-cursor>
     </a-scene>
-
-
-  </body>
+</body>
 </html>
